@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcxo438on463o"]
+
+[ext_resource type="Texture2D" uid="uid://dc1egnfy25jae" path="res://Assets/Sad_hamster.PNG" id="1_0q8l7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_py1dd"]
+radius = 180.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0q8l7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 5)
+shape = SubResource("CircleShape2D_py1dd")
