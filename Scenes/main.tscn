@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://ch4jlnrenqvd"]
+
+[ext_resource type="PackedScene" uid="uid://bn274c6sld1tk" path="res://Scenes/ball.tscn" id="1_rh4fs"]
+[ext_resource type="PackedScene" uid="uid://dcxo438on463o" path="res://Scenes/player.tscn" id="2_boxuu"]
+[ext_resource type="PackedScene" uid="uid://2ir7hw8ex55v" path="res://Scenes/goal.tscn" id="3_wd28n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrf6c"]
+size = Vector2(5, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox84f"]
+size = Vector2(5, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5tgl"]
+size = Vector2(1152, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acuo3"]
+size = Vector2(1152, 5)
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0.471945, 8.66354e-07, 1)
+metadata/_edit_lock_ = true
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 324)
+shape = SubResource("RectangleShape2D_wrf6c")
+
+[node name="Right" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1152, 324)
+shape = SubResource("RectangleShape2D_ox84f")
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+position = Vector2(576, 0)
+shape = SubResource("RectangleShape2D_s5tgl")
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+position = Vector2(576, 648)
+shape = SubResource("RectangleShape2D_acuo3")
+
+[node name="Ball" parent="." instance=ExtResource("1_rh4fs")]
+position = Vector2(560, 431)
+
+[node name="Player" parent="." instance=ExtResource("2_boxuu")]
+position = Vector2(808, 573)
+
+[node name="GoalLeft" parent="." instance=ExtResource("3_wd28n")]
+position = Vector2(70, 544)
+
+[node name="GoalRight" parent="." instance=ExtResource("3_wd28n")]
+position = Vector2(1082, 544)
+
+[node name="Sprite2D" parent="GoalRight" index="0"]
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="GoalRight" index="1"]
+polygon = PackedVector2Array(-50.7693, -63.8462, 39.2308, -63.8462, 44.6154, -60.0001, 47.6923, -53.077, 66.1538, 79.2307, 60.7692, 79.2307, 43.0769, -53.077, 41.5385, -56.9232, 39.2308, -59.2308, -50.7693, -59.2308)
+
+[editable path="GoalRight"]
