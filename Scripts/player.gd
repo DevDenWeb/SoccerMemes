@@ -18,4 +18,14 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		var collider = collision.get_collider()
+		if collider.is_in_group("ball"):
+			var impact_force = max(velocity.length(), 200.0)
+			var dir_ball = (collider.global_position - global_position).normalized()
+			
+			dir_ball.y -= 1.5
+			collider.apply_custom_impulse(dir_ball.normalized() * impact_force)
+
 	move_and_slide()

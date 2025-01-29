@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch4jlnrenqvd"]
+[gd_scene load_steps=9 format=3 uid="uid://ch4jlnrenqvd"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://fo7qearc451t" path="res://Assets/Materials/wall_physics_material.tres" id="1_i25ip"]
 [ext_resource type="PackedScene" uid="uid://bn274c6sld1tk" path="res://Scenes/ball.tscn" id="1_rh4fs"]
 [ext_resource type="PackedScene" uid="uid://dcxo438on463o" path="res://Scenes/player.tscn" id="2_boxuu"]
 [ext_resource type="PackedScene" uid="uid://2ir7hw8ex55v" path="res://Scenes/goal.tscn" id="3_wd28n"]
@@ -25,6 +26,7 @@ color = Color(0, 0.471945, 8.66354e-07, 1)
 metadata/_edit_lock_ = true
 
 [node name="Walls" type="StaticBody2D" parent="."]
+physics_material_override = ExtResource("1_i25ip")
 
 [node name="Left" type="CollisionShape2D" parent="Walls"]
 position = Vector2(0, 324)
@@ -58,6 +60,6 @@ position = Vector2(1082, 544)
 flip_h = true
 
 [node name="CollisionPolygon2D" parent="GoalRight" index="1"]
-polygon = PackedVector2Array(-50.7693, -63.8462, 39.2308, -63.8462, 44.6154, -60.0001, 47.6923, -53.077, 66.1538, 79.2307, 60.7692, 79.2307, 43.0769, -53.077, 41.5385, -56.9232, 39.2308, -59.2308, -50.7693, -59.2308)
+polygon = PackedVector2Array(-50.7693, -63.8462, 49.0383, -69.2308, 63.4614, -71.5385, 53.8459, -55.3847, 66.1538, 79.2307, 60.7692, 79.2307, 43.0769, -53.077, 41.5385, -56.9232, 39.2308, -59.2308, -50.7693, -59.2308)
 
 [editable path="GoalRight"]
