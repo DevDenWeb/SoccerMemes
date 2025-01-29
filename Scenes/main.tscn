@@ -6,16 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://2ir7hw8ex55v" path="res://Scenes/goal.tscn" id="3_wd28n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrf6c"]
-size = Vector2(5, 648)
+size = Vector2(10, 648)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ox84f"]
-size = Vector2(5, 648)
+size = Vector2(10, 648)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5tgl"]
-size = Vector2(1152, 5)
+size = Vector2(1152, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acuo3"]
-size = Vector2(1152, 5)
+size = Vector2(1152, 10)
 
 [node name="Main" type="Node2D"]
 
@@ -26,6 +26,8 @@ color = Color(0, 0.471945, 8.66354e-07, 1)
 metadata/_edit_lock_ = true
 
 [node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
 physics_material_override = ExtResource("1_i25ip")
 
 [node name="Left" type="CollisionShape2D" parent="Walls"]
@@ -37,7 +39,7 @@ position = Vector2(1152, 324)
 shape = SubResource("RectangleShape2D_ox84f")
 
 [node name="Top" type="CollisionShape2D" parent="Walls"]
-position = Vector2(576, 0)
+position = Vector2(576, 0.25)
 shape = SubResource("RectangleShape2D_s5tgl")
 
 [node name="Bottom" type="CollisionShape2D" parent="Walls"]
