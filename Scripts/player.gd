@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-############# версия Chat GPT ##############
+#------------- версия Chat GPT -----------------
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
@@ -31,7 +31,7 @@ extends CharacterBody2D
 #
 	#move_and_slide()
 
-############ Версия deepseek #############
+# ------------- Версия deepseek -----------------
 
 var speed: float = 300
 var jump_force: float = -500
@@ -54,5 +54,3 @@ func _physics_process(delta):
 		var c = get_slide_collision(i)
 		if c.get_collider().name == "Ball":
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
-			print("yes")
-	
