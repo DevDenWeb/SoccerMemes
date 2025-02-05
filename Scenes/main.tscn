@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch4jlnrenqvd"]
+[gd_scene load_steps=10 format=3 uid="uid://ch4jlnrenqvd"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://fo7qearc451t" path="res://Assets/Materials/wall_physics_material.tres" id="1_i25ip"]
 [ext_resource type="PackedScene" uid="uid://bn274c6sld1tk" path="res://Scenes/ball.tscn" id="1_rh4fs"]
+[ext_resource type="Texture2D" uid="uid://cfqdp4d3hiq6c" path="res://Assets/football-field-background.jpg" id="1_veky3"]
 [ext_resource type="PackedScene" uid="uid://dcxo438on463o" path="res://Scenes/player.tscn" id="2_boxuu"]
 [ext_resource type="PackedScene" uid="uid://2ir7hw8ex55v" path="res://Scenes/goal.tscn" id="3_wd28n"]
 
@@ -19,7 +20,13 @@ size = Vector2(1152, 10)
 
 [node name="Main" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 383)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("1_veky3")
+
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0.471945, 8.66354e-07, 1)
