@@ -60,6 +60,9 @@ position = Vector2(576, 324)
 [node name="Player_1" parent="." instance=ExtResource("2_boxuu")]
 position = Vector2(933, 593)
 
+[node name="Player_2" parent="." instance=ExtResource("6_7asr0")]
+position = Vector2(209, 583)
+
 [node name="GoalLeft" parent="." instance=ExtResource("3_wd28n")]
 position = Vector2(70, 544)
 
@@ -71,8 +74,5 @@ flip_h = true
 
 [node name="CollisionPolygon2D" parent="GoalRight" index="1"]
 polygon = PackedVector2Array(-50.7693, -63.8462, 49.0383, -69.2308, 63.4614, -71.5385, 53.8459, -55.3847, 66.1538, 79.2307, 60.7692, 79.2307, 43.0769, -53.077, 41.5385, -56.9232, 39.2308, -59.2308, -50.7693, -59.2308)
-
-[node name="Player_2" parent="." instance=ExtResource("6_7asr0")]
-position = Vector2(209, 583)
 
 [editable path="GoalRight"]
